@@ -1,11 +1,11 @@
 .react-markdown-textarea {
   &__textarea-wrapper {
     border: 1px solid gray(80%);
-    padding: rhythm(0.5);
+    padding: 13px;
     &__textarea {
       width: 100%;
       background: gray(95%);
-      padding: rhythm(0.25);
+      padding: 6.5px;
       &:focus {
         background: gray(100%);
       }
@@ -22,18 +22,19 @@
     }
   }
   &__nav {
-    @include adjust-font-size-to(15px);
-    padding-left: rhythm(0.5);
+    font-size: 15px;
+    line-height: 26px;
+    padding-left: 13px;
     margin-left: 0;
     margin-top: 0;
-    margin-bottom: rhythm(-0.25);
+    margin-bottom: -6.5px;
     &__item {
       border: 1px solid;
       border-color: rgba(0,0,0,0);
       color: gray(20%);
-      margin-left: rhythm(0.25);
+      margin-left: 6.5px;
       margin-bottom: 0;
-      padding: rhythm(0.25) rhythm(0.5);
+      padding: 6.5px 13px;
       position: relative;
       top: 2px;
       &--active {

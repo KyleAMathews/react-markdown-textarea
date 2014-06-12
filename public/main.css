@@ -668,11 +668,11 @@ hr {
 
 .react-markdown-textarea__textarea-wrapper {
   border: 1px solid #cccccc;
-  padding: 0.65rem; }
+  padding: 13px; }
   .react-markdown-textarea__textarea-wrapper__textarea {
     width: 100%;
     background: #f2f2f2;
-    padding: 0.325rem; }
+    padding: 6.5px; }
     .react-markdown-textarea__textarea-wrapper__textarea:focus {
       background: white; }
   .react-markdown-textarea__textarea-wrapper__preview > *:first-child {
@@ -681,20 +681,18 @@ hr {
     margin-bottom: 0; }
 .react-markdown-textarea__nav {
   font-size: 15px;
-  font-size: 0.75rem;
   line-height: 26px;
-  line-height: 1.3rem;
-  padding-left: 0.65rem;
+  padding-left: 13px;
   margin-left: 0;
   margin-top: 0;
-  margin-bottom: -0.325rem; }
+  margin-bottom: -6.5px; }
   .react-markdown-textarea__nav__item {
     border: 1px solid;
     border-color: transparent;
     color: #333333;
-    margin-left: 0.325rem;
+    margin-left: 6.5px;
     margin-bottom: 0;
-    padding: 0.325rem 0.65rem;
+    padding: 6.5px 13px;
     position: relative;
     top: 2px; }
     .react-markdown-textarea__nav__item--active {
