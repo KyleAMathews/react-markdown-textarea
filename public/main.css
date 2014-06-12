@@ -493,7 +493,7 @@ html {
 
 h1, h2, h3, h4, h5 {
   color: #262626;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
 h1 {
@@ -560,7 +560,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 1.5rem;
-  font-family: Georgia, sans-serif;
+  font-family: "Linux Libertine", Georgia, sans-serif;
   font-weight: 400;
   color: #4c4c4c;
   text-rendering: optimizeLegibility;
@@ -675,9 +675,9 @@ hr {
     padding: 0.325rem; }
     .react-markdown-textarea__textarea-wrapper__textarea:focus {
       background: white; }
-  .react-markdown-textarea__textarea-wrapper__preview *:first-child {
+  .react-markdown-textarea__textarea-wrapper__preview > *:first-child {
     margin-top: 0; }
-  .react-markdown-textarea__textarea-wrapper__preview *:last-child {
+  .react-markdown-textarea__textarea-wrapper__preview > *:last-child {
     margin-bottom: 0; }
 .react-markdown-textarea__nav {
   font-size: 15px;

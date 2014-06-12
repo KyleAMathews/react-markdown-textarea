@@ -11,7 +11,7 @@
       }
     }
     &__preview {
-      * {
+      > * {
         &:first-child {
           margin-top: 0;
         }
