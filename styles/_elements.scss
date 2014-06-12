@@ -42,12 +42,12 @@ pre {
   margin-bottom: rhythm(1);
   padding: 0;
   code {
-    background: none;
     border: none;
     display: inline-block;
     overflow: initial;
     padding: rhythm(1);
     white-space: inherit;
+    width: 100%;
     word-wrap: inherit;
   }
 }
@@ -84,9 +84,5 @@ hr {
   clear: both;
   float: none;
   height: 1px;
-  width: 100%;
-}
-
-textarea {
   width: 100%;
 }

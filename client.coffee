@@ -7,11 +7,25 @@ window.React = React
 
 React.renderComponent(
   <div>
-    <h2>Default</h2>
+    <h1>React Markdown Textarea</h1>
+    <p>Autoexpanding, built-in preview awesomeness!</p>
+    <code>npm install --save react-markdown-textarea</code>
+    <br />
+    <br />
+    <br />
+
+    <h2>No arguments</h2>
     <code>{"<MarkdownTextarea />"}</code>
     <br />
     <br />
     <MarkdownTextarea />
+    <hr />
+
+    <h2>Set the default value</h2>
+    <code>{"<MarkdownTextarea value='Type some *markdown* here!' />"}</code>
+    <br />
+    <br />
+    <MarkdownTextarea value='Type some *markdown* here!' />
     <hr />
 
     <h2>Pass attributes to the textarea element</h2>

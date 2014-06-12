@@ -502,17 +502,14 @@ h1 {
   line-height: 47px;
   line-height: 2.34rem;
   margin-top: 0.65rem;
-  margin-bottom: 1.3rem; }
-  @media (min-width: 500px) {
-    h1 {
-      margin-top: 2.6rem; } }
+  margin-bottom: 0.65rem; }
 
 h2 {
   font-size: 30px;
   font-size: 1.5rem;
   line-height: 35px;
   line-height: 1.755rem;
-  margin-top: 2.6rem;
+  margin-top: 0.65rem;
   margin-bottom: 0.325rem; }
 
 h3 {
@@ -520,7 +517,7 @@ h3 {
   font-size: 1rem;
   line-height: 26px;
   line-height: 1.3rem;
-  margin-top: 1.3rem;
+  margin-top: 0.65rem;
   margin-bottom: 0.325rem; }
 
 h4 {
@@ -528,7 +525,7 @@ h4 {
   font-size: 0.8165rem;
   line-height: 26px;
   line-height: 1.3rem;
-  margin-top: 1.3rem;
+  margin-top: 0.65rem;
   margin-bottom: 0rem; }
 
 h5 {
@@ -536,7 +533,7 @@ h5 {
   font-size: 0.66667rem;
   line-height: 26px;
   line-height: 1.3rem;
-  margin-top: 1.3rem;
+  margin-top: 0.65rem;
   margin-bottom: 0rem; }
 
 h6 {
@@ -544,7 +541,7 @@ h6 {
   font-size: 0.54433rem;
   line-height: 20px;
   line-height: 0.975rem;
-  margin-top: 1.3rem;
+  margin-top: 0.65rem;
   margin-bottom: 0rem; }
 
 small {
@@ -552,6 +549,11 @@ small {
   font-size: 0.8165rem;
   line-height: 26px;
   line-height: 1.3rem; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 body {
   max-width: 32em;
@@ -621,12 +623,12 @@ pre {
   margin-bottom: 1.3rem;
   padding: 0; }
   pre code {
-    background: none;
     border: none;
     display: inline-block;
     overflow: initial;
     padding: 1.3rem;
     white-space: inherit;
+    width: 100%;
     word-wrap: inherit; }
 
 blockquote {
@@ -664,5 +666,40 @@ hr {
   height: 1px;
   width: 100%; }
 
-textarea {
-  width: 100%; }
+.react-markdown-textarea__textarea-wrapper {
+  border: 1px solid #cccccc;
+  padding: 0.65rem; }
+  .react-markdown-textarea__textarea-wrapper__textarea {
+    width: 100%;
+    background: #f2f2f2;
+    padding: 0.325rem; }
+    .react-markdown-textarea__textarea-wrapper__textarea:focus {
+      background: white; }
+  .react-markdown-textarea__textarea-wrapper__preview *:first-child {
+    margin-top: 0; }
+  .react-markdown-textarea__textarea-wrapper__preview *:last-child {
+    margin-bottom: 0; }
+.react-markdown-textarea__nav {
+  font-size: 15px;
+  font-size: 0.75rem;
+  line-height: 26px;
+  line-height: 1.3rem;
+  padding-left: 0.65rem;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: -0.325rem; }
+  .react-markdown-textarea__nav__item {
+    border: 1px solid;
+    border-color: transparent;
+    color: #333333;
+    margin-left: 0.325rem;
+    margin-bottom: 0;
+    padding: 0.325rem 0.65rem;
+    position: relative;
+    top: 2px; }
+    .react-markdown-textarea__nav__item--active {
+      background: white;
+      border: 1px solid;
+      border-bottom: none;
+      border-color: #cccccc;
+      color: #4c4c4c; }

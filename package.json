@@ -52,7 +52,10 @@
   },
   "dependencies": {
     "jquery": "^2.1.1",
-    "react-textarea-autosize": "^0.2.0",
-    "react-tools": "^0.10.0"
+    "marked": "^0.3.2",
+    "react-textarea-autosize": "^0.2.0"
+  },
+  "peerDependencies": {
+    "react-tools": "^0.8.0"
   }
 }

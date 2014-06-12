@@ -64,34 +64,31 @@ $type-scale: (
 h1 {
   @include type-scale(xxlarge);
   margin-top: rhythm(0.5);
-  @include breakpoint(500px) {
-    margin-top: rhythm(2);
-  }
-  margin-bottom: rhythm(1);
+  margin-bottom: rhythm(0.5);
 }
 h2 {
   @include type-scale(xlarge);
-  margin-top: rhythm(2);
+  margin-top: rhythm(0.5);
   margin-bottom: rhythm(0.25);
 }
 h3 {
   @include type-scale(large);
-  margin-top: rhythm(1);
+  margin-top: rhythm(0.5);
   margin-bottom: rhythm(0.25);
 }
 h4 {
   @include type-scale(medium);
-  margin-top: rhythm(1);
+  margin-top: rhythm(0.5);
   margin-bottom: rhythm(0);
 }
 h5 {
   @include type-scale(base);
-  margin-top: rhythm(1);
+  margin-top: rhythm(0.5);
   margin-bottom: rhythm(0);
 }
 h6 {
   @include type-scale(small);
-  margin-top: rhythm(1);
+  margin-top: rhythm(0.5);
   margin-bottom: rhythm(0);
 }
 small {
