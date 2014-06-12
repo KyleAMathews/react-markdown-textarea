@@ -23,8 +23,9 @@ publish-gh-pages:
 
 publish:
 	git push --tags origin HEAD:master
-	#npm publish
+	npm publish
 
 define release
+	@$(BIN)/cjsx -cb -o lib src/index.cjsx
 	npm version $(1)
 endef
