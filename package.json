@@ -1,6 +1,6 @@
 {
   "name": "coffee-react-quickstart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Evolving base for creating React applications",
   "main": "server.coffee",
   "scripts": {
