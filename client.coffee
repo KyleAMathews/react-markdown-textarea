@@ -8,8 +8,8 @@ window.React = React
 React.renderComponent(
   <div>
     <h1>React Markdown Textarea</h1>
-    <p>Autoexpanding, built-in preview awesomeness!</p>
-    <code>npm install --save react-markdown-textarea</code>
+    <p>Auto-resizing, built-in preview awesomeness!</p>
+    <code>npm install react-markdown-textarea</code>
     <br />
     <br />
     <br />
@@ -21,7 +21,7 @@ React.renderComponent(
     <MarkdownTextarea />
     <hr />
 
-    <h2>Set the default value</h2>
+    <h2>Set a default value</h2>
     <code>{"<MarkdownTextarea value='Type some *markdown* here!' />"}</code>
     <br />
     <br />
@@ -29,10 +29,10 @@ React.renderComponent(
     <hr />
 
     <h2>Pass attributes to the textarea element</h2>
-    <code>{"<MarkdownTextarea rows=4 />"}</code>
+    <code>{"<MarkdownTextarea rows=6 />"}</code>
     <br />
     <br />
-    <MarkdownTextarea rows=4 />
+    <MarkdownTextarea rows=6 />
     <hr />
 
     <h2>Placeholder</h2>
@@ -40,5 +40,12 @@ React.renderComponent(
     <br />
     <br />
     <MarkdownTextarea placeholder='A cool placeholder' />
+    <hr />
+
+    <h2>Disable preview</h2>
+    <code>{"<MarkdownTextarea noPreview />"}</code>
+    <br />
+    <br />
+    <MarkdownTextarea noPreview />
   </div>
   , document.body)

@@ -31,6 +31,17 @@ module.exports = React.createClass
     @setState value: @refs.textarea.getDOMNode().value
 
   render: ->
+    # Class names
+    cx = React.addons.classSet
+    writeTabClasses = cx({
+      'react-markdown-textarea__nav__item': true
+      'react-markdown-textarea__nav__item--active': @state.active is "write"
+    })
+    previewTabClasses = cx({
+      'react-markdown-textarea__nav__item': true
+      'react-markdown-textarea__nav__item--active': @state.active is "preview"
+    })
+
     ulStyles = {
       display: 'inline-block'
     }
@@ -62,23 +73,17 @@ module.exports = React.createClass
           dangerouslySetInnerHTML={__html: marked(@state.value)}>
       </div>
 
-    # Class names
-    cx = React.addons.classSet
-    writeTabClasses = cx({
-      'react-markdown-textarea__nav__item': true
-      'react-markdown-textarea__nav__item--active': @state.active is "write"
-    })
-    previewTabClasses = cx({
-      'react-markdown-textarea__nav__item': true
-      'react-markdown-textarea__nav__item--active': @state.active is "preview"
-    })
-
-    return (
-      <div className="react-markdown-textarea">
+    # Add preview?
+    unless @props.noPreview
+      tabs =
         <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={ulStyles}>
           <li className={writeTabClasses} style={liStyles}>Write</li>
           <li className={previewTabClasses} style={liStyles}>Preview</li>
         </ul>
+
+    return (
+      <div className="react-markdown-textarea">
+        {tabs}
         <div className="react-markdown-textarea__textarea-wrapper">
           {textarea}
         </div>
