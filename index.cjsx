@@ -24,7 +24,7 @@ module.exports = React.createClass
     # Ignore clicks not on an li
     unless e.target.tagName is "LI" then return
     # Ignore clicks on the active tab.
-    if e.target.className is "active" then return
+    if e.target.className is "react-markdown-textarea__nav__item--active" then return
 
     if @state.active is "write"
       @setState active: 'preview'
