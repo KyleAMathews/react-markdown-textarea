@@ -1,1 +1,7 @@
 src
+public
+Gemfile
+Gemfile.lock
+gulpfile.coffee
+Makefile
+preprocessor.js
