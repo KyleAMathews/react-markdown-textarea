@@ -12,7 +12,7 @@ isProduction = process.env.NODE_ENV is "production"
 
 # React code
 gulp.task('scripts', ->
-    return gulp.src('client.coffee', read: false)
+    return gulp.src('src/examples.coffee', read: false)
         .pipe($.browserify({
             insertGlobals: true
             extensions: '.cjsx'
@@ -28,11 +28,11 @@ gulp.task('scripts', ->
 
 # CSS
 gulp.task('css', ->
-  gulp.src(['styles/*.sass', 'styles/*.scss'])
+  gulp.src(['src/styles/*.sass', 'src/styles/*.scss'])
     .pipe($.compass({
       css: 'public/'
-      sass: 'styles'
-      image: 'styles/images'
+      sass: 'src/styles'
+      image: 'src/styles/images'
       style: 'nested'
       comments: false
       bundle_exec: true
@@ -59,10 +59,10 @@ gulp.task 'default', ->
 gulp.task 'build', ['scripts', 'css']
 
 gulp.task 'watch', ['css', 'connect'], ->
-  gulp.watch(['styles/*'], ['css'])
+  gulp.watch(['src/styles/*'], ['css'])
 
   # https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
-  bundler = watchify('./client.coffee', {
+  bundler = watchify('./src/examples.coffee', {
     extensions: ['.coffee', '.cjsx']
   })
   bundler.transform('coffee-reactify')
