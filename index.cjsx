@@ -16,6 +16,10 @@ module.exports = React.createClass
 
     return state
 
+  getDefaultProps: ->
+    buttonText: "Save"
+    onSave: (value) -> console.log value
+
   toggleTab: (e) ->
     # Ignore clicks not on an li
     unless e.target.tagName is "LI" then return
@@ -29,6 +33,9 @@ module.exports = React.createClass
 
   handleChange: (e) ->
     @setState value: @refs.textarea.getDOMNode().value
+
+  _onSave: ->
+    @props.onSave(@state.value)
 
   render: ->
     # Class names
@@ -66,6 +73,7 @@ module.exports = React.createClass
         defaultValue={@state.value}
         style={textareaStyles}
        />)
+      saveButton = <button onClick={@_onSave} className="react-markdown-textarea__textarea-wrapper__button">{@props.buttonText}</button>
     else
       textarea = <div
           className="react-markdown-textarea__textarea-wrapper__preview"
@@ -86,6 +94,7 @@ module.exports = React.createClass
         {tabs}
         <div className="react-markdown-textarea__textarea-wrapper">
           {textarea}
+          {saveButton}
         </div>
       </div>
     )

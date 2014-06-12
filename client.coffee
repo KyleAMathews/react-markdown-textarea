@@ -42,6 +42,13 @@ React.renderComponent(
     <MarkdownTextarea placeholder='A cool placeholder' />
     <hr />
 
+    <h2>Override the button text</h2>
+    <code>{"<MarkdownTextarea buttonText='Save new comment' />"}</code>
+    <br />
+    <br />
+    <MarkdownTextarea buttonText="Save new comment" />
+    <hr />
+
     <h2>Disable preview</h2>
     <code>{"<MarkdownTextarea noPreview />"}</code>
     <br />
