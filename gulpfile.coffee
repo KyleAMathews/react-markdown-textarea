@@ -8,6 +8,8 @@ browserify = require 'browserify'
 # Load plugins
 $ = require('gulp-load-plugins')()
 
+isProduction = process.env.NODE_ENV is "production"
+
 # React code
 gulp.task('scripts', ->
     return gulp.src('client.coffee', read: false)
@@ -15,8 +17,9 @@ gulp.task('scripts', ->
             insertGlobals: true
             extensions: '.cjsx'
             transform: ['coffee-reactify', 'envify']
-            debug: true
+            debug: !isProduction
         }))
+        .pipe($.if(isProduction, $.uglify()))
         .pipe($.rename('bundle.js'))
         .pipe(gulp.dest('public/'))
         .pipe($.size())

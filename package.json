@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/coffee server.coffee",
     "build": "cult build",
+    "build-prod": "NODE_ENV=production cult build",
     "test": "jest"
   },
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
@@ -28,7 +29,6 @@
     "open": "0.0.5",
     "react": "^0.10.0",
     "reactify": "^0.13.1",
-    "socket.io": "^1.0.4",
     "underscore": "^1.6.0",
     "vinyl-source-stream": "^0.1.1",
     "watchify": "^0.10.2"
@@ -51,11 +51,13 @@
     ]
   },
   "dependencies": {
+    "gulp-if": "^1.2.1",
+    "gulp-uglify": "^0.3.0",
     "jquery": "^2.1.1",
     "marked": "^0.3.2",
     "react-textarea-autosize": "^0.2.0"
   },
   "peerDependencies": {
-    "react-tools": "^0.8.0"
+    "react-tools": ">=0.8.0"
   }
 }
