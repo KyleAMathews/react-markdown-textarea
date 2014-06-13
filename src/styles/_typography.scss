@@ -63,17 +63,17 @@ $type-scale: (
 
 h1 {
   @include type-scale(xxlarge);
-  margin-top: rhythm(0.5);
+  margin-top: rhythm(1);
   margin-bottom: rhythm(0.5);
 }
 h2 {
   @include type-scale(xlarge);
-  margin-top: rhythm(0.5);
+  margin-top: rhythm(1);
   margin-bottom: rhythm(0.25);
 }
 h3 {
   @include type-scale(large);
-  margin-top: rhythm(0.5);
+  margin-top: rhythm(1);
   margin-bottom: rhythm(0.25);
 }
 h4 {
