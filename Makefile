@@ -28,4 +28,5 @@ publish:
 define release
 	@$(BIN)/cjsx -cb -o lib src/index.cjsx
 	npm version $(1)
+	rm lib/index.js
 endef
