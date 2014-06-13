@@ -16,7 +16,7 @@ React.renderComponent(
     <h3>Basic usage</h3>
     <pre><code>
       MarkdownTextarea = require('react-markdown-textarea');
-      React.renderComponent(MarkdownTextarea, document.body);
+      React.renderComponent(<MarkdownTextarea />, document.body);
     </code></pre>
 
     <h3>CSS</h3>
