@@ -76,5 +76,15 @@ React.renderComponent(
     <br />
     <br />
     <MarkdownTextarea noPreview />
+    <hr />
+    <h1>Thanks</h1>
+    <p>This code is built on the great work of many other open-source contributers.</p>
+    <ul>
+      <li><a href="facebook.github.io/react/">React from Facebook</a></li>
+      <li><a href="https://github.com/andreypopp/react-textarea-autosize">react-textarea-autosize</a> by <a href="https://github.com/andreypopp">Audrey Popp</a></li>
+      <li><a href="https://github.com/jackmoore/autosize">jQuery plugin Autosize</a> by <a href="https://github.com/jackmoore">Jack Moore</a></li>
+    </ul>
+
+
   </div>
   , document.body)
