@@ -19,13 +19,13 @@ React.renderComponent(
      {"React.renderComponent(<MarkdownTextarea />, document.body);"}
     </code></pre>
 
-    <h3>CSS</h3>
+    <h3>Theming</h3>
     <p>The component ships with the minimum CSS to position the various elements
     correctly. You'll be expected to write additional CSS in order to make it fit
     your application. In the Git repository, there's a <a href="https://github.com/KyleAMathews/react-markdown-textarea/blob/master/src/styles/_react_markdown_textarea.scss">SCSS file</a> that's used
     on this page that you can use as a starting point. Class names follow the 
     <a href="http://bem.info/method/">BEM methodology</a> as can seen by inspecting
-    the examples below e.g. <code>react-markdown-textarea__textarea-wrapper__button </code>
+    the examples below e.g. <code>react-markdown-textarea__button</code>{" "}
      is the class name for the button.
     </p>
 

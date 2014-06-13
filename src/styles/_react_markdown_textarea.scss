@@ -2,27 +2,27 @@
   &__textarea-wrapper {
     border: 1px solid gray(80%);
     padding: 13px;
-    &__textarea {
-      width: 100%;
-      background: gray(95%);
-      padding: 6.5px;
-      &:focus {
-        background: gray(100%);
+  }
+  &__textarea {
+    width: 100%;
+    background: gray(95%);
+    padding: 6.5px;
+    &:focus {
+      background: gray(100%);
+    }
+  }
+  &__preview {
+    > * {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
-    &__preview {
-      > * {
-        &:first-child {
-          margin-top: 0;
-        }
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-    &__button {
-      margin-top: 6.5px;
-    }
+  }
+  &__save-button {
+    margin-top: 6.5px;
   }
   &__nav {
     font-size: 15px;

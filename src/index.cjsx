@@ -4,6 +4,7 @@ Textarea = require('react-textarea-autosize')
 marked = require 'marked'
 
 module.exports = React.createClass
+  displayName: 'MarkdownTextarea'
   getInitialState: ->
     state = {
       active: 'write'
@@ -66,17 +67,17 @@ module.exports = React.createClass
     # Are we writing or previewing.
     if @state.active is 'write'
       textarea = @transferPropsTo(<Textarea
-        className="react-markdown-textarea__textarea-wrapper__textarea"
+        className="react-markdown-textarea__textarea"
         autosize
         onChange={@handleChange}
         ref="textarea"
         defaultValue={@state.value}
         style={textareaStyles}
        />)
-      saveButton = <button onClick={@_onSave} className="react-markdown-textarea__textarea-wrapper__button">{@props.buttonText}</button>
+      saveButton = <button onClick={@_onSave} className="react-markdown-textarea__save-button">{@props.buttonText}</button>
     else
       textarea = <div
-          className="react-markdown-textarea__textarea-wrapper__preview"
+          className="react-markdown-textarea__preview"
           style={padding: '6.5px'}
           dangerouslySetInnerHTML={__html: marked(@state.value)}>
       </div>
