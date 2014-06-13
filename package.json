@@ -10,6 +10,14 @@
   },
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "marked": "^0.3.2",
+    "react-textarea-autosize": "^0.2.0"
+  },
+  "peerDependencies": {
+    "react-tools": ">=0.8.0"
+  },
   "devDependencies": {
     "browserify": "^4.1.9",
     "coffee-react": "^0.1.1",
@@ -51,13 +59,5 @@
       "coffee",
       "cjsx"
     ]
-  },
-  "dependencies": {
-    "jquery": "^2.1.1",
-    "marked": "^0.3.2",
-    "react-textarea-autosize": "^0.2.0"
-  },
-  "peerDependencies": {
-    "react-tools": ">=0.8.0"
   }
 }
