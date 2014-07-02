@@ -8,14 +8,16 @@ module.exports = React.createClass
   getInitialState: ->
     state = {
       active: 'write'
+      value: ''
     }
-    # Let consumers of component set the intial value of the textarea.
-    if @props.value?
-      state.value = @props.value
-    else
-      state.value = ""
 
     return state
+
+  componentDidMount: ->
+    if @props.value?
+      @setState value: @props.value
+    else if @props.defaultValue?
+      @setState value: @props.defaultValue
 
   getDefaultProps: ->
     buttonText: "Save"
