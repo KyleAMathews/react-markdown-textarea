@@ -33,7 +33,9 @@ module.exports = React.createClass
       @setState value: nextProps.defaultValue
 
   componentWillUpdate: ->
-    jQuery('.react-markdown-textarea textarea').trigger('autosize.resize')
+    setTimeout((->
+      jQuery('.react-markdown-textarea textarea').trigger('autosize.resize')
+    ), 1)
 
   toggleTab: (e) ->
     # Ignore clicks not on an li
