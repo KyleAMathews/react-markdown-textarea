@@ -71,10 +71,10 @@ React.renderComponent(
     <hr />
 
     <h2>Set a default value</h2>
-    <code>{"<MarkdownTextarea value='Type some *markdown* here!' />"}</code>
+    <code>{"<MarkdownTextarea defaultValue='Type some *markdown* here!' />"}</code>
     <br />
     <br />
-    <MarkdownTextarea value='Type some *markdown* here!' />
+    <MarkdownTextarea defaultValue='Type some *markdown* here!' />
     <hr />
 
     <h2>Pass attributes to the textarea element</h2>

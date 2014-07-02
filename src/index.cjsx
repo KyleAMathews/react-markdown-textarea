@@ -74,7 +74,6 @@ module.exports = React.createClass
         autosize
         onChange={@handleChange}
         ref="textarea"
-        defaultValue={@state.value}
         style={textareaStyles}
        />)
       saveButton = <button onClick={@_onSave} className="react-markdown-textarea__save-button">{@props.buttonText}</button>
