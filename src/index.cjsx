@@ -32,6 +32,9 @@ module.exports = React.createClass
     else if nextProps.defaultValue?
       @setState value: nextProps.defaultValue
 
+  componentWillUpdate: ->
+    jQuery('.react-markdown-textarea textarea').trigger('autosize.resize')
+
   toggleTab: (e) ->
     # Ignore clicks not on an li
     unless e.target.tagName is "LI" then return
