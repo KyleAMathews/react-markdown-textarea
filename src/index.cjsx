@@ -13,16 +13,24 @@ module.exports = React.createClass
 
     return state
 
+  getDefaultProps: ->
+    buttonText: "Save"
+    onSave: (value) ->
+    onChange: (value) ->
+
+  # On mounting and when props are changed, copy props over to value.
+  # we if we click preview, we immediately have something to preview.
   componentDidMount: ->
     if @props.value?
       @setState value: @props.value
     else if @props.defaultValue?
       @setState value: @props.defaultValue
 
-  getDefaultProps: ->
-    buttonText: "Save"
-    onSave: (value) ->
-    onChange: (value) ->
+  componentWillReceiveProps: (nextProps) ->
+    if nextProps.value?
+      @setState value: nextProps.value
+    else if nextProps.defaultValue?
+      @setState value: nextProps.defaultValue
 
   toggleTab: (e) ->
     # Ignore clicks not on an li
