@@ -1,9 +1,36 @@
 React = require 'react'
 window.jQuery = window.$ = require 'jquery'
 MarkdownTextarea = require('./index')
+marked = require 'marked'
 
 # Assign react to Window so the Chrome React Dev Tools will work
 window.React = React
+
+CommentBox = React.createClass(
+  getInitialState: ->
+    comments: ['The first comment!']
+    text: ''
+
+  handleChange: (value) ->
+    @setState text: value
+
+  handleSave: (value) ->
+    @setState text: ''
+    @setState comments: @state.comments.concat(value)
+
+  render: ->
+    comments = []
+    for comment in @state.comments
+      comments.push <li dangerouslySetInnerHTML={__html: marked(comment)} />
+
+    return (
+      <div>
+        <h3>Comments</h3>
+        <ul>{comments}</ul>
+        <MarkdownTextarea value={@state.text} onChange={@handleChange} onSave={@handleSave} placeholder="Write new comment" />
+      </div>
+    )
+)
 
 React.renderComponent(
   <div>
@@ -77,7 +104,40 @@ React.renderComponent(
     <br />
     <MarkdownTextarea noPreview />
     <hr />
+
+    <h2>Comment box example</h2>
+    <pre><code>{"""
+CommentBox = React.createClass(
+  getInitialState: ->
+    comments: ['The first comment!']
+    text: ''
+
+  handleChange: (value) ->
+    @setState text: value
+
+  handleSave: (value) ->
+    @setState text: ''
+    @setState comments: @state.comments.concat(value)
+
+  render: ->
+    comments = []
+    for comment in @state.comments
+      comments.push <li dangerouslySetInnerHTML={__html: marked(comment)} />
+
+    return (
+      <div>
+        <h3>Comments</h3>
+        <ul>{comments}</ul>
+        <MarkdownTextarea value={@state.text} onChange={@handleChange} onSave={@handleSave} placeholder="Write new comment" />
+      </div>
+    )
+)
+"""}</code></pre>
+    <CommentBox />
+    <hr />
+
     <h1>Thanks</h1>
+
     <p>This code is built on the great work of many other open-source contributers.</p>
     <ul>
       <li><a href="http://facebook.github.io/react/">React from Facebook</a></li>

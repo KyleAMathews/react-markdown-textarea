@@ -19,7 +19,8 @@ module.exports = React.createClass
 
   getDefaultProps: ->
     buttonText: "Save"
-    onSave: (value) -> console.log value
+    onSave: (value) ->
+    onChange: (value) ->
 
   toggleTab: (e) ->
     # Ignore clicks not on an li
@@ -33,7 +34,9 @@ module.exports = React.createClass
       @setState active: 'write'
 
   handleChange: (e) ->
-    @setState value: @refs.textarea.getDOMNode().value
+    newValue = @refs.textarea.getDOMNode().value
+    @setState value: newValue
+    @props.onChange(newValue)
 
   _onSave: ->
     @props.onSave(@state.value)
