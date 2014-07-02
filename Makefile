@@ -27,6 +27,6 @@ publish:
 
 define release
 	@$(BIN)/cjsx -cb -o lib src/index.cjsx
+	cp src/styles/_react_markdown_textarea.scss lib
 	npm version $(1)
-	rm lib/index.js
 endef
