@@ -19,14 +19,14 @@ describe 'markdownTextarea', ->
     textarea = TestUtils.findRenderedDOMComponentWithTag(markdownTextarea, 'textarea')
     expect(textarea).toBeDefined()
 
-  it 'should take a default value for the markdown', ->
+  it 'should take an initial value for the markdown', ->
     React = require 'react/addons'
     window.jQuery = require 'jquery'
     MarkdownTextarea = require '../src/index'
     TestUtils = React.addons.TestUtils
 
     # Render the MarkdownTextarea component.
-    markdownTextarea = <MarkdownTextarea value='type some *markdown* here!' />
+    markdownTextarea = <MarkdownTextarea initialValue='type some *markdown* here!' />
     TestUtils.renderIntoDocument(markdownTextarea)
 
     # Verify the textearea element was created.

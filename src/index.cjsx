@@ -5,56 +5,24 @@ marked = require 'marked'
 
 module.exports = React.createClass
   displayName: 'MarkdownTextarea'
-  getInitialState: ->
-    state = {
-      active: 'write'
-      value: ''
-    }
-
-    return state
 
   getDefaultProps: ->
     buttonText: "Save"
     onSave: (value) ->
     onChange: (value) ->
 
-  # On mounting and when props are changed, copy props over to value.
-  # we if we click preview, we immediately have something to preview.
-  componentDidMount: ->
-    if @props.value?
-      @setState value: @props.value
-    else if @props.defaultValue?
-      @setState value: @props.defaultValue
+  getInitialState: ->
+    state = {
+      active: 'write'
+      value: if @props.initialValue? then @props.initialValue else ""
+    }
 
-  componentWillReceiveProps: (nextProps) ->
-    if nextProps.value?
-      @setState value: nextProps.value
-    else if nextProps.defaultValue?
-      @setState value: nextProps.defaultValue
+    return state
 
   componentWillUpdate: ->
     setTimeout((->
       jQuery('.react-markdown-textarea textarea').trigger('autosize.resize')
-    ), 1)
-
-  toggleTab: (e) ->
-    # Ignore clicks not on an li
-    unless e.target.tagName is "LI" then return
-    # Ignore clicks on the active tab.
-    if e.target.className is "react-markdown-textarea__nav__item--active" then return
-
-    if @state.active is "write"
-      @setState active: 'preview'
-    else
-      @setState active: 'write'
-
-  handleChange: (e) ->
-    newValue = @refs.textarea.getDOMNode().value
-    @setState value: newValue
-    @props.onChange(newValue)
-
-  _onSave: ->
-    @props.onSave(@state.value)
+    ), 0)
 
   render: ->
     # Class names
@@ -87,6 +55,7 @@ module.exports = React.createClass
       textarea = @transferPropsTo(<Textarea
         className="react-markdown-textarea__textarea"
         autosize
+        value={@state.value}
         onChange={@handleChange}
         ref="textarea"
         style={textareaStyles}
@@ -115,3 +84,23 @@ module.exports = React.createClass
         </div>
       </div>
     )
+
+  toggleTab: (e) ->
+    # Ignore clicks not on an li
+    unless e.target.tagName is "LI" then return
+    # Ignore clicks on the active tab.
+    if e.target.className is "react-markdown-textarea__nav__item--active" then return
+
+    if @state.active is "write"
+      @setState active: 'preview'
+    else
+      @setState active: 'write'
+
+  handleChange: (e) ->
+    newValue = @refs.textarea.getDOMNode().value
+    @setState value: newValue
+    @props.onChange(newValue)
+
+  _onSave: ->
+    @props.onSave(@state.value)
+

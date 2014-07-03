@@ -9,13 +9,8 @@ window.React = React
 CommentBox = React.createClass(
   getInitialState: ->
     comments: ['The first comment!']
-    text: ''
-
-  handleChange: (value) ->
-    @setState text: value
 
   handleSave: (value) ->
-    @setState text: ''
     @setState comments: @state.comments.concat(value)
 
   render: ->
@@ -27,7 +22,7 @@ CommentBox = React.createClass(
       <div>
         <h3>Comments</h3>
         <ul>{comments}</ul>
-        <MarkdownTextarea value={@state.text} onChange={@handleChange} onSave={@handleSave} placeholder="Write new comment" />
+        <MarkdownTextarea key={@state.comments.length} initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
       </div>
     )
 )
@@ -70,11 +65,11 @@ React.renderComponent(
     <MarkdownTextarea />
     <hr />
 
-    <h2>Set a default value</h2>
-    <code>{"<MarkdownTextarea defaultValue='Type some *markdown* here!' />"}</code>
+    <h2>Set the initial value</h2>
+    <code>{"<MarkdownTextarea initialValue='Type some *markdown* here!' />"}</code>
     <br />
     <br />
-    <MarkdownTextarea defaultValue='Type some *markdown* here!' />
+    <MarkdownTextarea initialValue='Type some *markdown* here!' />
     <hr />
 
     <h2>Pass attributes to the textarea element</h2>
@@ -110,13 +105,8 @@ React.renderComponent(
 CommentBox = React.createClass(
   getInitialState: ->
     comments: ['The first comment!']
-    text: ''
-
-  handleChange: (value) ->
-    @setState text: value
 
   handleSave: (value) ->
-    @setState text: ''
     @setState comments: @state.comments.concat(value)
 
   render: ->
@@ -128,7 +118,7 @@ CommentBox = React.createClass(
       <div>
         <h3>Comments</h3>
         <ul>{comments}</ul>
-        <MarkdownTextarea value={@state.text} onChange={@handleChange} onSave={@handleSave} placeholder="Write new comment" />
+        <MarkdownTextarea initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
       </div>
     )
 )
