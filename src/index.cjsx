@@ -95,7 +95,6 @@ module.exports = React.createClass
     else
       textarea = <div
           className="react-markdown-textarea__preview"
-          style={padding: '6.5px'}
           dangerouslySetInnerHTML={__html: marked(@state.value)}>
       </div>
 

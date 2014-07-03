@@ -705,10 +705,12 @@ button {
   padding: 6.5px; }
   .react-markdown-textarea__textarea:focus {
     background: white; }
-.react-markdown-textarea__preview > *:first-child {
-  margin-top: 0; }
-.react-markdown-textarea__preview > *:last-child {
-  margin-bottom: 0; }
+.react-markdown-textarea__preview {
+  padding: 6.5px; }
+  .react-markdown-textarea__preview > *:first-child {
+    margin-top: 0; }
+  .react-markdown-textarea__preview > *:last-child {
+    margin-bottom: 0; }
 .react-markdown-textarea__save-button {
   margin-top: 6.5px; }
 .react-markdown-textarea__nav {
