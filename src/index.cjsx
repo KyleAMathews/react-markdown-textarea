@@ -45,7 +45,6 @@ module.exports = React.createClass
       cursor: 'pointer'
     }
     textareaStyles = {
-      border: 'none'
       display: 'block'
       resize: 'none'
     }

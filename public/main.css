@@ -700,6 +700,7 @@ button {
   border: 1px solid #cccccc;
   padding: 13px; }
 .react-markdown-textarea__textarea {
+  border: none;
   width: 100%;
   background: #f2f2f2;
   padding: 6.5px; }
