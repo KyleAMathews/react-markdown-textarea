@@ -696,8 +696,46 @@ button {
   button:active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
 
+.react-spinner {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 50%; }
+
+.react-spinner_bar {
+  -webkit-animation: react-spinner_spin 1.2s linear infinite;
+  -moz-animation: react-spinner_spin 1.2s linear infinite;
+  animation: react-spinner_spin 1.2s linear infinite;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+  width: 26%;
+  height: 12%;
+  top: -1.25px;
+  left: -3.25px; }
+
+@keyframes "react-spinner_spin" {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.15; } }
+@-moz-keyframes react-spinner_spin {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.15; } }
+@-webkit-keyframes "react-spinner_spin" {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.15; } }
 .react-markdown-textarea__textarea-wrapper {
   border: 1px solid #cccccc;
+  overflow: hidden;
   padding: 13px; }
 .react-markdown-textarea__textarea {
   border: none;
@@ -713,7 +751,16 @@ button {
   .react-markdown-textarea__preview > *:last-child {
     margin-bottom: 0; }
 .react-markdown-textarea__save-button {
+  float: left;
   margin-top: 6.5px; }
+.react-markdown-textarea__spinner {
+  top: 1.3rem;
+  left: 1.3rem;
+  height: 1.3rem;
+  width: 1.3rem;
+  float: left; }
+  .react-markdown-textarea__spinner .react-spinner_bar {
+    background-color: black; }
 .react-markdown-textarea__nav {
   font-size: 15px;
   line-height: 26px;

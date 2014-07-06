@@ -9,9 +9,16 @@ window.React = React
 CommentBox = React.createClass(
   getInitialState: ->
     comments: ['The first comment!']
+    saving: false
 
   handleSave: (value) ->
-    @setState comments: @state.comments.concat(value)
+    @setState saving: true
+    setTimeout((=>
+      @setState {
+        comments: @state.comments.concat(value)
+        saving: false
+      }
+    ), 500)
 
   render: ->
     comments = []
@@ -22,7 +29,7 @@ CommentBox = React.createClass(
       <div>
         <h3>Comments</h3>
         <ul>{comments}</ul>
-        <MarkdownTextarea key={@state.comments.length} initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
+        <MarkdownTextarea saving={@state.saving} key={@state.comments.length} initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
       </div>
     )
 )
@@ -105,9 +112,16 @@ React.renderComponent(
 CommentBox = React.createClass(
   getInitialState: ->
     comments: ['The first comment!']
+    saving: false
 
   handleSave: (value) ->
-    @setState comments: @state.comments.concat(value)
+    @setState saving: true
+    setTimeout((=>
+      @setState {
+        comments: @state.comments.concat(value)
+        saving: false
+      }
+    ), 500)
 
   render: ->
     comments = []
@@ -118,7 +132,7 @@ CommentBox = React.createClass(
       <div>
         <h3>Comments</h3>
         <ul>{comments}</ul>
-        <MarkdownTextarea initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
+        <MarkdownTextarea saving={@state.saving} initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
       </div>
     )
 )

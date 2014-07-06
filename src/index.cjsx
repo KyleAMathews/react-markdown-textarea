@@ -1,7 +1,10 @@
 React = require 'react/addons'
-window.jQuery = window.$ = require 'jquery'
+if window?
+  window.jQuery = window.$ = require 'jquery'
+  window.React = React
 Textarea = require('react-textarea-autosize')
 marked = require 'marked'
+Spinner = require 'react-spinner'
 
 module.exports = React.createClass
   displayName: 'MarkdownTextarea'
@@ -80,6 +83,7 @@ module.exports = React.createClass
         <div className="react-markdown-textarea__textarea-wrapper">
           {textarea}
           {saveButton}
+          {if @props.saving then <Spinner className="react-markdown-textarea__spinner" />}
         </div>
       </div>
     )
