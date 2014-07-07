@@ -62,7 +62,12 @@ module.exports = React.createClass
         ref="textarea"
         style={textareaStyles}
        />)
-      saveButton = <button onClick={@_onSave} className="react-markdown-textarea__save-button">{@props.buttonText}</button>
+      saveButton = <button
+        onClick={@_onSave}
+        disabled={if @props.saving then "disabled" else false}
+        className="react-markdown-textarea__save-button">
+          {@props.buttonText}
+      </button>
     else
       textarea = <div
           className="react-markdown-textarea__preview"
