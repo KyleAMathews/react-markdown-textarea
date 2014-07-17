@@ -100,6 +100,13 @@ React.renderComponent(
     <MarkdownTextarea buttonText="Save new comment" />
     <hr />
 
+    <h2>Include a delete button</h2>
+    <code>{"<MarkdownTextarea deleteButton=true onDelete={-> alert(\"I'm gone!!\")} />"}</code>
+    <br />
+    <br />
+    <MarkdownTextarea deleteButton=true onDelete={-> alert("I'm gone!!")} />
+    <hr />
+
     <h2>Disable preview</h2>
     <code>{"<MarkdownTextarea noPreview />"}</code>
     <br />

@@ -50,6 +50,23 @@ describe 'markdownTextarea', ->
 
     expect(onSave).toBeCalled()
 
+  it 'should call a provided onDelete function when the delete button is clicked', ->
+    React = require 'react/addons'
+    window.jQuery = require 'jquery'
+    MarkdownTextarea = require '../src/index'
+    TestUtils = React.addons.TestUtils
+
+    # Render the MarkdownTextarea component.
+    onDelete = jest.genMockFunction()
+    markdownTextarea = <MarkdownTextarea deleteButton=true onDelete={onDelete} />
+    TestUtils.renderIntoDocument(markdownTextarea)
+
+    # Simulate clicking the markdown button and verify our onSave function was called.
+    button = TestUtils.findRenderedDOMComponentWithClass(markdownTextarea, 'react-markdown-textarea__delete-button')
+    TestUtils.Simulate.click(button)
+
+    expect(onDelete).toBeCalled()
+
   it 'should remove the write/preview tabs if noPreview is passed in', ->
     React = require 'react/addons'
     window.jQuery = require 'jquery'

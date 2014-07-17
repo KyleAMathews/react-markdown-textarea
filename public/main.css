@@ -695,6 +695,8 @@ button {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1)); }
   button:active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
+  button.react-markdown-textarea__delete-button {
+    background-color: #B39B96; }
 
 .react-spinner {
   position: relative;
@@ -752,6 +754,10 @@ button {
     margin-bottom: 0; }
 .react-markdown-textarea__save-button {
   float: left;
+  margin-top: 6.5px; }
+.react-markdown-textarea__delete-button {
+  float: left;
+  margin-left: 6.5px;
   margin-top: 6.5px; }
 .react-markdown-textarea__spinner {
   top: 1.3rem;

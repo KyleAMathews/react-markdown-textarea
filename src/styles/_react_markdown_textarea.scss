@@ -14,6 +14,7 @@
     }
   }
   &__preview {
+    min-height: 65px;
     padding: 6.5px;
     > * {
       &:first-child {
@@ -26,6 +27,11 @@
   }
   &__save-button {
     float: left;
+    margin-top: 6.5px;
+  }
+  &__delete-button {
+    float: left;
+    margin-left: 6.5px;
     margin-top: 6.5px;
   }
   &__spinner {

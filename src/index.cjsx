@@ -12,7 +12,9 @@ module.exports = React.createClass
   getDefaultProps: ->
     buttonText: "Save"
     onSave: (value) ->
+    onDelete: ->
     onChange: (value) ->
+    deleteButton: false
 
   getInitialState: ->
     state = {
@@ -87,7 +89,20 @@ module.exports = React.createClass
         {tabs}
         <div className="react-markdown-textarea__textarea-wrapper">
           {textarea}
-          {saveButton}
+          <button
+            onClick={@_onSave}
+            disabled={if @props.saving then "disabled" else false}
+            className="react-markdown-textarea__save-button">
+              {@props.buttonText}
+          </button>
+          { if @props.deleteButton
+            <button
+              onClick={@_onDelete}
+              disabled={if @props.saving then "disabled" else false}
+              className="react-markdown-textarea__delete-button">
+                Delete
+            </button>
+          }
           {if @props.saving then <Spinner className="react-markdown-textarea__spinner" />}
         </div>
       </div>
@@ -113,3 +128,5 @@ module.exports = React.createClass
   _onSave: ->
     @props.onSave(@state.value)
 
+  _onDelete: ->
+    @props.onDelete()
