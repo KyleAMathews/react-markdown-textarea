@@ -55,6 +55,7 @@
   },
   "keywords": [
     "react",
+    "react-component",
     "autosize",
     "textarea",
     "markdown"
