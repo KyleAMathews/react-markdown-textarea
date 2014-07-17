@@ -54,7 +54,9 @@ module.exports = React.createClass
       resize: 'none'
     }
 
-    # Are we writing or previewing.
+    # Are we writing or previewing?
+    #
+    # Swap between writing and previewing states.
     if @state.active is 'write'
       textarea = @transferPropsTo(<Textarea
         className="react-markdown-textarea__textarea"
@@ -64,12 +66,6 @@ module.exports = React.createClass
         ref="textarea"
         style={textareaStyles}
        />)
-      saveButton = <button
-        onClick={@_onSave}
-        disabled={if @props.saving then "disabled" else false}
-        className="react-markdown-textarea__save-button">
-          {@props.buttonText}
-      </button>
     else
       textarea = <div
           className="react-markdown-textarea__preview"

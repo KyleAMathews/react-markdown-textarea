@@ -747,6 +747,7 @@ button {
   .react-markdown-textarea__textarea:focus {
     background: white; }
 .react-markdown-textarea__preview {
+  min-height: 65px;
   padding: 6.5px; }
   .react-markdown-textarea__preview > *:first-child {
     margin-top: 0; }
