@@ -13,7 +13,7 @@ release-major: test
 	@$(call release,major)
 
 publish-gh-pages:
-	rm -r lib
+	rm -rf lib
 	git checkout gh-pages
 	git checkout master -- public
 	cp public/* .
