@@ -60,7 +60,6 @@ module.exports = React.createClass
     if @state.active is 'write'
       textarea = @transferPropsTo(<Textarea
         className="react-markdown-textarea__textarea"
-        autosize
         value={@state.value}
         onChange={@handleChange}
         ref="textarea"
