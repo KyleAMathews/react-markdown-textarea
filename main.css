@@ -712,10 +712,10 @@ button {
   border-radius: 5px;
   background-color: white;
   position: absolute;
-  width: 26%;
-  height: 12%;
-  top: -1.25px;
-  left: -3.25px; }
+  width: 20%;
+  height: 7.8%;
+  top: -3.9%;
+  left: -10%; }
 
 @keyframes "react-spinner_spin" {
   0% {
