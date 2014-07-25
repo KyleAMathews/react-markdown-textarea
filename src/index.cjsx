@@ -24,11 +24,6 @@ module.exports = React.createClass
 
     return state
 
-  componentWillUpdate: ->
-    setTimeout((->
-      jQuery('.react-markdown-textarea textarea').trigger('autosize.resize')
-    ), 0)
-
   render: ->
     # Class names
     cx = React.addons.classSet
