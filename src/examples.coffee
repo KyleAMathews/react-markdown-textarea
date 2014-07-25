@@ -23,13 +23,19 @@ CommentBox = React.createClass(
   render: ->
     comments = []
     for comment in @state.comments
-      comments.push <li dangerouslySetInnerHTML={__html: marked(comment)} />
+      comments.push (
+        <li dangerouslySetInnerHTML={__html: marked(comment)} />
+      )
 
     return (
       <div>
         <h3>Comments</h3>
         <ul>{comments}</ul>
-        <MarkdownTextarea saving={@state.saving} key={@state.comments.length} initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
+        <MarkdownTextarea
+          saving={@state.saving}
+          key={@state.comments.length}
+          onSave={@handleSave}
+          placeholder="Write new comment" />
       </div>
     )
 )
@@ -133,13 +139,18 @@ CommentBox = React.createClass(
   render: ->
     comments = []
     for comment in @state.comments
-      comments.push <li dangerouslySetInnerHTML={__html: marked(comment)} />
+      comments.push (
+        <li dangerouslySetInnerHTML={__html: marked(comment)} />
+      )
 
     return (
       <div>
         <h3>Comments</h3>
         <ul>{comments}</ul>
-        <MarkdownTextarea saving={@state.saving} initialValue={@state.text} onSave={@handleSave} placeholder="Write new comment" />
+        <MarkdownTextarea
+          saving={@state.saving}
+          onSave={@handleSave}
+          placeholder="Write new comment" />
       </div>
     )
 )
