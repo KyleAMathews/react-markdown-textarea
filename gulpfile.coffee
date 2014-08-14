@@ -16,7 +16,7 @@ gulp.task('scripts', ->
         .pipe($.browserify({
             insertGlobals: true
             extensions: '.cjsx'
-            transform: ['coffee-reactify', 'envify']
+            transform: ['coffee-reactify']
             debug: !isProduction
         }))
         .pipe($.if(isProduction, $.uglify()))
