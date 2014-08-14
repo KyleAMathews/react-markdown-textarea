@@ -60,17 +60,4 @@ gulp.task 'build', ['scripts', 'css']
 
 gulp.task 'watch', ['css', 'connect'], ->
   gulp.watch(['src/styles/*'], ['css'])
-
-  # https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
-  bundler = watchify('./src/examples.coffee', {
-    extensions: ['.coffee', '.cjsx']
-  })
-  bundler.transform('coffee-reactify')
-  rebundle = ->
-    return bundler.bundle({debug: true})
-      .pipe(source('bundle.js'))
-      .pipe(gulp.dest('./public'))
-      .pipe($.connect.reload())
-
-  bundler.on('update', rebundle)
-  rebundle()
+  gulp.watch(['src/*'], ['scripts'])

@@ -1,5 +1,4 @@
 React = require 'react'
-window.jQuery = window.$ = require 'jquery'
 MarkdownTextarea = require('./index')
 marked = require 'marked'
 

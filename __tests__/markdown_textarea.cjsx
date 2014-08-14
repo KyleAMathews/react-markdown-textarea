@@ -1,13 +1,10 @@
 # @cjsx React.DOM
 
-
 jest.dontMock '../src/index'
-jest.dontMock 'jquery'
 
 describe 'markdownTextarea', ->
   it 'should render a textarea', ->
     React = require 'react/addons'
-    window.jQuery = require 'jquery'
     MarkdownTextarea = require '../src/index'
     TestUtils = React.addons.TestUtils
 
@@ -21,7 +18,6 @@ describe 'markdownTextarea', ->
 
   it 'should take an initial value for the markdown', ->
     React = require 'react/addons'
-    window.jQuery = require 'jquery'
     MarkdownTextarea = require '../src/index'
     TestUtils = React.addons.TestUtils
 
@@ -35,7 +31,6 @@ describe 'markdownTextarea', ->
 
   it 'should call a provided onSave function when the save button is clicked', ->
     React = require 'react/addons'
-    window.jQuery = require 'jquery'
     MarkdownTextarea = require '../src/index'
     TestUtils = React.addons.TestUtils
 
@@ -52,7 +47,6 @@ describe 'markdownTextarea', ->
 
   it 'should call a provided onDelete function when the delete button is clicked', ->
     React = require 'react/addons'
-    window.jQuery = require 'jquery'
     MarkdownTextarea = require '../src/index'
     TestUtils = React.addons.TestUtils
 
@@ -69,7 +63,6 @@ describe 'markdownTextarea', ->
 
   it 'should remove the write/preview tabs if noPreview is passed in', ->
     React = require 'react/addons'
-    window.jQuery = require 'jquery'
     MarkdownTextarea = require '../src/index'
     TestUtils = React.addons.TestUtils
 
