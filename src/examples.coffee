@@ -162,7 +162,7 @@ CommentBox = React.createClass(
     <p>This code is built on the great work of many other open-source contributers.</p>
     <ul>
       <li><a href="http://facebook.github.io/react/">React from Facebook</a></li>
-      <li><a href="https://github.com/andreypopp/react-textarea-autosize">react-textarea-autosize</a> by <a href="https://github.com/andreypopp">Audrey Popp</a></li>
+      <li><a href="https://github.com/andreypopp/react-textarea-autosize">react-textarea-autosize</a> by <a href="https://github.com/andreypopp">Andrey Popp</a></li>
     </ul>
 
 
