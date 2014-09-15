@@ -3,7 +3,6 @@ if window?
   window.React = React
 Textarea = require('react-textarea-autosize')
 marked = require 'marked'
-Spinner = require 'react-spinner'
 
 module.exports = React.createClass
   displayName: 'MarkdownTextarea'
@@ -92,7 +91,9 @@ module.exports = React.createClass
                 Delete
             </button>
           }
-          {if @props.saving then <Spinner className="react-markdown-textarea__spinner" />}
+          {if @props.saving and @props.spinner?
+            @props.spinner({className: "react-markdown-textarea__spinner"})
+          }
         </div>
       </div>
     )

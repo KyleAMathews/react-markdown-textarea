@@ -6,7 +6,6 @@
   "bugs": "https://github.com/KyleAMathews/react-markdown-textarea/issues",
   "dependencies": {
     "marked": "^0.3.2",
-    "react-spinner": "^0.1.9",
     "react-textarea-autosize": "^1.0.2"
   },
   "devDependencies": {
@@ -28,6 +27,7 @@
     "jest-cli": "^0.1.18",
     "open": "0.0.5",
     "react": "^0.11.1",
+    "react-spinner": "^0.1.9",
     "reactify": "^0.14.0",
     "underscore": "^1.7.0",
     "vinyl-source-stream": "^1.0.0",

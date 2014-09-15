@@ -5,6 +5,8 @@ marked = require 'marked'
 # Assign react to Window so the Chrome React Dev Tools will work
 window.React = React
 
+Spinner = require 'react-spinner'
+
 CommentBox = React.createClass(
   getInitialState: ->
     comments: ['The first comment!']
@@ -34,7 +36,8 @@ CommentBox = React.createClass(
           saving={@state.saving}
           key={@state.comments.length}
           onSave={@handleSave}
-          placeholder="Write new comment" />
+          placeholder="Write new comment"
+          spinner={Spinner} />
       </div>
     )
 )
@@ -119,8 +122,10 @@ React.renderComponent(
     <MarkdownTextarea noPreview />
     <hr />
 
-    <h2>Comment box example</h2>
+    <h2>Comment box example (with spinner)</h2>
     <pre><code>{"""
+Spinner = require 'react-spinner'
+
 CommentBox = React.createClass(
   getInitialState: ->
     comments: ['The first comment!']
@@ -149,7 +154,8 @@ CommentBox = React.createClass(
         <MarkdownTextarea
           saving={@state.saving}
           onSave={@handleSave}
-          placeholder="Write new comment" />
+          placeholder="Write new comment"
+          spinner={Spinner} />
       </div>
     )
 )
