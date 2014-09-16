@@ -37,7 +37,9 @@ CommentBox = React.createClass(
           key={@state.comments.length}
           onSave={@handleSave}
           placeholder="Write new comment"
-          spinner={Spinner} />
+          spinner={Spinner}
+          spinnerOptions={{className: "react-markdown-textarea__spinner"}}
+        />
       </div>
     )
 )
@@ -155,7 +157,9 @@ CommentBox = React.createClass(
           saving={@state.saving}
           onSave={@handleSave}
           placeholder="Write new comment"
-          spinner={Spinner} />
+          spinner={Spinner}
+          spinnerOptions={{className: "react-markdown-textarea__spinner"}}
+        />
       </div>
     )
 )

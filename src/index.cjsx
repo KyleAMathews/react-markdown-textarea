@@ -13,6 +13,7 @@ module.exports = React.createClass
     onDelete: ->
     onChange: (value) ->
     deleteButton: false
+    spinnerOptions: {}
 
   getInitialState: ->
     state = {
@@ -92,7 +93,7 @@ module.exports = React.createClass
             </button>
           }
           {if @props.saving and @props.spinner?
-            @props.spinner({className: "react-markdown-textarea__spinner"})
+            @props.spinner(@props.spinnerOptions)
           }
         </div>
       </div>
