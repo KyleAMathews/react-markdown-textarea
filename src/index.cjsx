@@ -1,6 +1,4 @@
 React = require 'react/addons'
-if window?
-  window.React = React
 Textarea = require('react-textarea-autosize')
 marked = require 'marked'
 
