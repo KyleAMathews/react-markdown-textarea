@@ -717,7 +717,7 @@ button {
   top: -3.9%;
   left: -10%; }
 
-@keyframes "react-spinner_spin" {
+@keyframes react-spinner_spin {
   0% {
     opacity: 1; }
 
@@ -729,7 +729,7 @@ button {
 
   100% {
     opacity: 0.15; } }
-@-webkit-keyframes "react-spinner_spin" {
+@-webkit-keyframes react-spinner_spin {
   0% {
     opacity: 1; }
 
