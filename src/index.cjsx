@@ -51,12 +51,12 @@ module.exports = React.createClass
     # Swap between writing and previewing states.
     if @state.active is 'write'
       textarea = <Textarea
+        {...@props}
         className="react-markdown-textarea__textarea"
         value={@state.value}
         onChange={@handleChange}
         ref="textarea"
         style={textareaStyles}
-        {...@props}
        />
     else
       textarea = <div
