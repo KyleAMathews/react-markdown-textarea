@@ -1,6 +1,7 @@
 React = require 'react/addons'
 Textarea = require('react-textarea-autosize')
 marked = require 'marked'
+classNames = require 'classnames'
 
 module.exports = React.createClass
   displayName: 'MarkdownTextarea'
@@ -23,12 +24,11 @@ module.exports = React.createClass
 
   render: ->
     # Class names
-    cx = React.addons.classSet
-    writeTabClasses = cx({
+    writeTabClasses = classNames({
       'react-markdown-textarea__nav__item': true
       'react-markdown-textarea__nav__item--active': @state.active is "write"
     })
-    previewTabClasses = cx({
+    previewTabClasses = classNames({
       'react-markdown-textarea__nav__item': true
       'react-markdown-textarea__nav__item--active': @state.active is "preview"
     })
@@ -50,13 +50,14 @@ module.exports = React.createClass
     #
     # Swap between writing and previewing states.
     if @state.active is 'write'
-      textarea = @transferPropsTo(<Textarea
+      textarea = <Textarea
         className="react-markdown-textarea__textarea"
         value={@state.value}
         onChange={@handleChange}
         ref="textarea"
         style={textareaStyles}
-       />)
+        {...@props}
+       />
     else
       textarea = <div
           className="react-markdown-textarea__preview"

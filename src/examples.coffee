@@ -44,7 +44,7 @@ CommentBox = React.createClass(
     )
 )
 
-React.renderComponent(
+React.render(
   <div>
     <h1>React Markdown Textarea</h1>
     <p>Auto-resizing, built-in preview awesomeness!</p>
@@ -55,7 +55,7 @@ React.renderComponent(
     <h3>Basic usage</h3>
     <pre><code>
       MarkdownTextarea = require('react-markdown-textarea');<br />
-     {"React.renderComponent(<MarkdownTextarea />, document.body);"}
+     {"React.render(<MarkdownTextarea />, document.body);"}
     </code></pre>
 
     <h3>Theming</h3>
