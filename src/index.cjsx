@@ -51,11 +51,11 @@ module.exports = React.createClass
 
     # Tabs style
     if @state.active is "write"
-      writeStyle = objectAssign @props.tabStyle, @props.tabActiveStyle
+      writeStyle = objectAssign {}, @props.tabStyle, @props.tabActiveStyle
       previewStyle = @props.tabStyle
     else if @state.active is "preview"
       writeStyle = @props.tabStyle
-      previewStyle = objectAssign @props.tabStyle, @props.tabActiveStyle
+      previewStyle = objectAssign {}, @props.tabStyle, @props.tabActiveStyle
 
     # Are we writing or previewing?
     #
