@@ -57,7 +57,7 @@ module.exports = React.createClass
         value={@state.value}
         onChange={@handleChange}
         ref="textarea"
-        style={@props.textareaStyles}
+        style={@props.textareaStyle}
        />
     else
       textarea = <div
@@ -68,9 +68,9 @@ module.exports = React.createClass
     # Add preview?
     unless @props.noPreview
       tabs =
-        <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={@props.navTabStyles}>
-          <li className={writeTabClasses} style={@props.tabStyles}>Write</li>
-          <li className={previewTabClasses} style={@props.tabStyles}>Preview</li>
+        <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={@props.navTabStyle}>
+          <li className={writeTabClasses} style={@props.tabStyle}>Write</li>
+          <li className={previewTabClasses} style={@props.tabStyle}>Preview</li>
         </ul>
 
     return (
