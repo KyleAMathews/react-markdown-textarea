@@ -13,18 +13,19 @@ module.exports = React.createClass
     onChange: (value) ->
     deleteButton: false
     spinnerOptions: {}
-    navTabStyle: {
-      display: 'inline-block'
-    }
+    navTabStyle: {}
     tabStyle: {
-      listStyle: 'none'
-      float: 'left'
       cursor: 'pointer'
+      display: 'inline-block'
+      listStyle: 'none'
     }
+    textAreaWrapperStyle: {}
+    tabActiveStyle: {}
     textareaStyle: {
       display: 'block'
       resize: 'none'
     }
+    previewStyle: {}
     buttonStyle: {}
     deleteButtonStyle: {}
 
@@ -47,6 +48,14 @@ module.exports = React.createClass
       'react-markdown-textarea__nav__item--active': @state.active is "preview"
     })
 
+    # Tabs style
+    if @state.active is "write"
+      writeStyle = _.extend @props.tabStyle, @props.tabActiveStyle
+      previewStyle = @props.tabStyle
+    else if @state.active is "preview"
+      writeStyle = @props.tabStyle
+      previewStyle = _.extend @props.tabStyle, @props.tabActiveStyle
+
     # Are we writing or previewing?
     #
     # Swap between writing and previewing states.
@@ -62,6 +71,7 @@ module.exports = React.createClass
     else
       textarea = <div
           className="react-markdown-textarea__preview"
+          style={@props.previewStyle}
           dangerouslySetInnerHTML={__html: marked(@state.value)}>
       </div>
 
@@ -69,14 +79,17 @@ module.exports = React.createClass
     unless @props.noPreview
       tabs =
         <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={@props.navTabStyle}>
-          <li className={writeTabClasses} style={@props.tabStyle}>Write</li>
-          <li className={previewTabClasses} style={@props.tabStyle}>Preview</li>
+          <li className={writeTabClasses} style={writeStyle}>Write</li>
+          <li className={previewTabClasses} style={previewStyle}>Preview</li>
         </ul>
 
     return (
       <div className="react-markdown-textarea">
         {tabs}
-        <div className="react-markdown-textarea__textarea-wrapper">
+        <div
+          className="react-markdown-textarea__textarea-wrapper"
+          style={@props.textAreaWrapperStyle}
+        >
           {textarea}
           <button
             onClick={@_onSave}
