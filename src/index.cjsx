@@ -13,6 +13,20 @@ module.exports = React.createClass
     onChange: (value) ->
     deleteButton: false
     spinnerOptions: {}
+    navTabStyle: {
+      display: 'inline-block'
+    }
+    tabStyle: {
+      listStyle: 'none'
+      float: 'left'
+      cursor: 'pointer'
+    }
+    textareaStyle: {
+      display: 'block'
+      resize: 'none'
+    }
+    buttonStyle: {}
+    deleteButtonStyle: {}
 
   getInitialState: ->
     state = {
@@ -33,19 +47,6 @@ module.exports = React.createClass
       'react-markdown-textarea__nav__item--active': @state.active is "preview"
     })
 
-    ulStyles = {
-      display: 'inline-block'
-    }
-    liStyles = {
-      listStyle: 'none'
-      float: 'left'
-      cursor: 'pointer'
-    }
-    textareaStyles = {
-      display: 'block'
-      resize: 'none'
-    }
-
     # Are we writing or previewing?
     #
     # Swap between writing and previewing states.
@@ -56,7 +57,7 @@ module.exports = React.createClass
         value={@state.value}
         onChange={@handleChange}
         ref="textarea"
-        style={textareaStyles}
+        style={@props.textareaStyles}
        />
     else
       textarea = <div
@@ -67,9 +68,9 @@ module.exports = React.createClass
     # Add preview?
     unless @props.noPreview
       tabs =
-        <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={ulStyles}>
-          <li className={writeTabClasses} style={liStyles}>Write</li>
-          <li className={previewTabClasses} style={liStyles}>Preview</li>
+        <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={@props.navTabStyles}>
+          <li className={writeTabClasses} style={@props.tabStyles}>Write</li>
+          <li className={previewTabClasses} style={@props.tabStyles}>Preview</li>
         </ul>
 
     return (
@@ -79,12 +80,14 @@ module.exports = React.createClass
           {textarea}
           <button
             onClick={@_onSave}
+            style={@props.buttonStyle}
             disabled={if @props.saving then "disabled" else false}
             className="react-markdown-textarea__save-button">
               {@props.buttonText}
           </button>
           { if @props.deleteButton
             <button
+              style={@props.deleteButtonStyle}
               onClick={@_onDelete}
               disabled={if @props.saving then "disabled" else false}
               className="react-markdown-textarea__delete-button">
