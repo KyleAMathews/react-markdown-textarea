@@ -2,6 +2,7 @@ React = require 'react/addons'
 Textarea = require('react-textarea-autosize')
 marked = require 'marked'
 classNames = require 'classnames'
+objectAssign = require 'object-assign'
 
 module.exports = React.createClass
   displayName: 'MarkdownTextarea'
@@ -50,11 +51,11 @@ module.exports = React.createClass
 
     # Tabs style
     if @state.active is "write"
-      writeStyle = _.extend @props.tabStyle, @props.tabActiveStyle
+      writeStyle = objectAssign @props.tabStyle, @props.tabActiveStyle
       previewStyle = @props.tabStyle
     else if @state.active is "preview"
       writeStyle = @props.tabStyle
-      previewStyle = _.extend @props.tabStyle, @props.tabActiveStyle
+      previewStyle = objectAssign @props.tabStyle, @props.tabActiveStyle
 
     # Are we writing or previewing?
     #
