@@ -20,7 +20,7 @@ module.exports = React.createClass
       display: 'inline-block'
       listStyle: 'none'
     }
-    textAreaWrapperStyle: {}
+    textareaWrapperStyle: {}
     tabActiveStyle: {}
     textareaStyle: {
       display: 'block'
@@ -89,7 +89,7 @@ module.exports = React.createClass
         {tabs}
         <div
           className="react-markdown-textarea__textarea-wrapper"
-          style={@props.textAreaWrapperStyle}
+          style={@props.textareaWrapperStyle}
         >
           {textarea}
           <button
