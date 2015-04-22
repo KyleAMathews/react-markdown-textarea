@@ -128,9 +128,8 @@ module.exports = React.createClass
       @setState active: 'write'
 
   handleChange: (e) ->
-    newValue = @refs.textarea.getDOMNode().value
-    @setState value: newValue
-    @props.onChange(newValue)
+    @setState value: e.target.value
+    @props.onChange(e.target.value)
 
   _onSave: ->
     @props.onSave(@state.value)
