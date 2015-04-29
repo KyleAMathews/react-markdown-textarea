@@ -36,11 +36,11 @@
   },
   "homepage": "http://kyleamathews.github.io/react-markdown-textarea/",
   "keywords": [
+    "autosize",
+    "markdown",
     "react",
     "react-component",
-    "autosize",
-    "textarea",
-    "markdown"
+    "textarea"
   ],
   "license": "MIT",
   "main": "lib/index.js",
