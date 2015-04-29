@@ -36,23 +36,6 @@
     "watchify": "^2.4.0"
   },
   "homepage": "http://kyleamathews.github.io/react-markdown-textarea/",
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react"
-    ],
-    "testFileExtensions": [
-      "coffee",
-      "js",
-      "cjsx"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "coffee",
-      "cjsx"
-    ]
-  },
   "keywords": [
     "react",
     "react-component",
@@ -68,7 +51,6 @@
   "repository": "https://github.com/KyleAMathews/react-markdown-textarea",
   "scripts": {
     "build": "cult build",
-    "build-prod": "NODE_ENV=production cult build",
-    "test": "jest"
+    "build-prod": "NODE_ENV=production cult build"
   }
 }
