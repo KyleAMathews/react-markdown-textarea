@@ -8,7 +8,10 @@ module.exports = React.createClass
   displayName: 'MarkdownTextarea'
 
   getDefaultProps: ->
-    buttonText: "Save"
+    saveButtonText: "Save"
+    deleteButtonText: "Delete"
+    writeTabText: "write"
+    previewTabText: "preview"
     onSave: (value) ->
     onDelete: ->
     onChange: (value) ->
@@ -80,8 +83,8 @@ module.exports = React.createClass
     unless @props.noPreview
       tabs =
         <ul className="react-markdown-textarea__nav" onMouseDown={@toggleTab} style={@props.navTabStyle}>
-          <li className={writeTabClasses} style={writeStyle}>Write</li>
-          <li className={previewTabClasses} style={previewStyle}>Preview</li>
+          <li className={writeTabClasses} style={writeStyle}>{@props.writeTabText}</li>
+          <li className={previewTabClasses} style={previewStyle}>{@props.previewTabText}</li>
         </ul>
 
     return (
@@ -105,7 +108,7 @@ module.exports = React.createClass
               onClick={@_onDelete}
               disabled={if @props.saving then "disabled" else false}
               className="react-markdown-textarea__delete-button">
-                Delete
+                {@props.deleteButtonText}
             </button>
           }
           {if @props.saving and @props.spinner?
