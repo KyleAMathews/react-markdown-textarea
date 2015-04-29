@@ -10,8 +10,8 @@ module.exports = React.createClass
   getDefaultProps: ->
     saveButtonText: "Save"
     deleteButtonText: "Delete"
-    writeTabText: "write"
-    previewTabText: "preview"
+    writeTabText: "Write"
+    previewTabText: "Preview"
     onSave: (value) ->
     onDelete: ->
     onChange: (value) ->
@@ -100,7 +100,7 @@ module.exports = React.createClass
             style={@props.buttonStyle}
             disabled={if @props.saving then "disabled" else false}
             className="react-markdown-textarea__save-button">
-              {@props.buttonText}
+              {@props.saveButtonText}
           </button>
           { if @props.deleteButton
             <button
