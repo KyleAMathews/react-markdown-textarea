@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react'
 Textarea = require('react-textarea-autosize')
 marked = require 'marked'
 classNames = require 'classnames'
